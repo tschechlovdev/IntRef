@@ -1,0 +1,44 @@
+<div class="card recommendItem" id="activeLRecommend">
+    <div class="card-body">
+        <span>
+            <h5 class="card-title">Paarweise Instanzabfrage:</h5>
+        </span>
+        <div class="recommendCompareDiv">
+            <p>Gehören folgende Instanzen dem selben Cluster an?</p>
+            <div id="recommendActiveQTableContainer">
+                <table class="table">
+                    <thead class="thead-light">
+                        <tr>
+                            {{#each relSortedAttributes as |relSortedAttribute|}}
+                                <th scope="col">{{relSortedAttribute}}</th>
+                            {{/each}}
+                            {{#each sortedAttributes as |sortedAttribute|}}
+                                <th scope="col" class="compareIrrelevantClass">{{sortedAttribute}}</th>
+                            {{/each}}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            {{#each relQuery as |relQitem|}}
+                                <td>{{relQitem.[0]}}</td>
+                            {{/each}}
+                            {{#each unRelQuery as |Qitem|}}
+                                <td class="compareIrrelevantClass">{{Qitem.[0]}}</td>
+                            {{/each}}
+                        </tr>
+                        <tr>
+                            {{#each relQuery as |relQitem|}}
+                                <td>{{relQitem.[1]}}</td>
+                            {{/each}}
+                            {{#each unRelQuery as |Qitem|}}
+                                <td class="compareIrrelevantClass">{{Qitem.[1]}}</td>
+                            {{/each}}
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <a href="#" id="btnSameClust" class="btn btn-success">Selbes Cluster</a>
+        <a href="#" id="btnDiffClust" class="btn btn-danger">Unterschiedliche Cluster</a>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "outDir": "./build/",
+    "target": "ES2020",
+    "removeComments": true,
+    "sourceMap": true,
+    "module": "commonjs",
+    "allowJs": false
+  },
+  "exclude": [
+    "node_modules",
+    "typings/main",
+    "typings/main.d.ts"
+  ]
+}
+

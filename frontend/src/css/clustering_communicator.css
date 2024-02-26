@@ -1,0 +1,525 @@
+div.tablefull {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    height: 100%;
+}
+
+div.tablefull > div.tableheader, div.tablefull > div.tableheader > div {
+    height: 0%;
+}
+
+div.tablefull > div {
+    display: table-row;
+}
+
+div.tablefull > div > div {
+    display: table-cell;
+    height: 100%;
+    padding: 0;
+}
+
+.data-table {
+    font-size: small;
+}
+
+.nopadding {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.oval {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 4px;
+    margin-left: 2px;
+    margin-right: 2px;
+    width: 300px;
+    background: lightblue;
+    text-align: center;
+    padding: 30px 4px;
+    word-wrap: break-word;
+
+}
+
+.clusterheader {
+    margin-bottom: 50px;
+}
+
+#hierarchyTreeContainerScroll {
+    overflow-x: scroll;
+    position: relative;
+    height: calc(100vh - 140px);
+}
+
+.oval {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 4px;
+    margin-left: 2px;
+    margin-right: 2px;
+    width: 300px;
+    background: lightblue;
+    text-align: center;
+    padding: 30px 4px;
+    word-wrap: break-word;
+
+}
+
+.weightBtnCont {
+    text-align: center;
+    margin-top: 7px;
+    margin-bottom: 7px;
+}
+
+.nodeHeading {
+    margin-top: 8px;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.treeNode {
+    width: 330px;
+    background: white;
+    min-height: 315px;
+    /* max-height: 315px; */
+}
+
+.clustNumber {
+    padding-bottom: 2px;
+    padding-top: 5px;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.kParamInput {
+    margin-bottom: 5px;
+    width: 98px;
+}
+
+.highlightCluster {
+    outline: 4px solid #00ff30;
+}
+
+#hierarchyTreeZoomOptions {
+    position: sticky;
+    background-color: #3e70bb;
+    border-color: transparent;
+    font-size: 45px;
+    display: flex;
+    padding: 5px;
+    border-radius: 12px;
+    justify-content: space-between;
+    left: 10px;
+    top: 0px;
+    width: 107px;
+    z-index: 10;
+}
+
+#hierarchyTreeZoomOptions:hover {
+    cursor: context-menu;
+}
+
+.zoomControl {
+    font-size: 40px;
+    color: #ffffff;
+    margin-left: 3px;
+    margin-right: 3px;
+}
+
+.zoomControl:hover {
+    background-color: #2b5696;
+}
+
+#zoomOptionSeparationDiv {
+    background-color: #808b9b;
+    height: auto;
+    width: 1px;
+}
+
+#clusterHierarchieTree {
+    height: 100%;
+    z-index: 2;
+    /* hack to stop unlimited expansion of scroll height when drawing svg lines for some reason */
+    max-height: 40000px;
+    height: 39000px;
+}
+
+#tree_placeholder {
+    position: absolute; 
+    top:0; 
+    left:0; 
+    width: 40000px;
+    height: 39000px;
+}
+
+#interfaceContainer {
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+    height: calc(100vh - 56px);
+    max-height: calc(100vh - 56px);
+}
+
+#nodeConnectionLineSvg {
+    /* important set to height of hierarchyTreeZoomOptions or connection lines wont align */
+    margin-top: 202px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    /* hack to stop unlimited expansion of scroll height when drawing svg lines for some reason */
+    max-height: 5000px;
+}
+
+.nodeConnectionLine:hover{
+    stroke-width: 15px;
+    stroke: #343a40d6;
+}
+
+.nodeConnectionLine:hover{
+    z-index: -1;
+}
+
+#topbar {
+    z-index: 20 !important;
+}
+
+#topbarToogle {
+    background-color: white !important;
+}
+
+.clusterQuantity {
+    display: flex;
+    align-content: flex-start;
+    justify-content: space-evenly;
+}
+
+.clusterQuantity > span {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f7f7f7;
+    padding: 5px;
+    border: 1px solid;
+    border-color: #dee2e6;
+    border-radius: 10px;
+    margin-top: 4px;
+}
+
+.importantFeatures {
+    display: flex;
+    flex-direction: column;
+    margin-left: 7px;
+}
+
+.importantFeatures > .feature_container {
+    display: flex;
+    flex-direction: row;
+    margin-left: 5px;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 5px;
+    overflow-x: auto;
+    margin-right: 5px;
+}
+
+.importantFeatures .feature_container > span {
+    display: flex;
+    flex-direction: row;
+    margin-left: 5px;
+}
+
+.btnChangeName {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-right: 8px;
+}
+
+.componentContainer {
+    overflow-x: scroll;
+    display: inline-flex;
+    flex-direction: row;
+    overflow-y: hidden;
+}
+
+#componentContainer {
+    display: flex;
+    flex-direction: row;
+}
+
+.histogramDivClass{
+    width: 600px;
+}
+
+.from_group_diatype {
+    width: 280px;
+}
+
+#clusterMetricsContainer {
+    height: 40vh;
+    overflow-x: auto;
+}
+
+.attributeWeightBadge {
+    font-size: inherit;
+    display: inline-flex;
+    height: 35px;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+    margin: 4px;
+}
+
+.attributeWeightBadgeSeparation {
+    margin-left: 5px;
+    margin-right: 8px;
+    height: inherit;
+    background-color: white;
+    width: 2px;
+}
+
+.attributeWeightBadgeInput{
+    height: 29px;
+    margin-right: -10px;
+    width: 42px;
+    margin-right: 3px;
+    border-radius: 8px;
+    border-style: hidden;
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.weightLegend {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.weightLegendExample {
+    height: 20px;
+    width: 20px;
+    background-color: #28a745;
+    margin-right: 7px;
+}
+
+.nodeColor {
+    width: 20px;
+    height: 20px;
+    background-color: inherit;
+    margin-right: 10px;
+    border-radius: 50px;
+}
+
+.headerReColWrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.graphForm{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.graphAllOptionContainer {
+    display: flex;
+    flex-direction: column;
+    margin-left: 25px;
+}
+
+.histoOptionSelect {
+    width: 100px !important;
+}
+
+#clusterRecDataContainer {
+    margin-top: 7px;
+    height: 98%;
+}
+
+#statSummaryContainer > h4 {
+    display: flex;
+}
+
+#statSummaryContainer {
+    margin-left: 30px;
+}
+
+#statTableContainer {
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+#clusterMetricsContainer > span{
+    display: inline-flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+#currentDetailedViewClustName {
+    margin-left: 10px;
+}
+
+#infoSectContainer {
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#infoSectContainer > h4 {
+    display: flex;
+    white-space: nowrap;
+}
+
+#infoSectContainer h5 {
+    white-space: nowrap;
+}
+
+#clustVisContainer {
+    margin-left: 30px;
+}
+
+.quality_ind_met_name{
+    display: inline-flex;
+}
+
+.quality_ind_met_name > svg {
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+.quality_ind_item {
+    display: flex;
+    margin-left: 15px;
+    margin-top: 2px;
+}
+
+.quality_ind_met_val{
+    margin-left: 7px;
+}
+
+#hierRestrictionDiv{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dependency {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
+
+.dependency_select_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.dependency_select_container .inputVal {
+    width: 200px;
+}
+
+.depAttSelect{
+    width: 200px;
+}
+
+.compSelect{
+    width: 100px;
+}
+
+.add_rest_button_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.hierRestBox {
+    position: absolute;
+    /* needs to be 0.5*margin-top of connection line div */
+    /* margin-top: 101px; */
+    margin-top: 202px;
+}
+
+.algInfContainer {
+    margin-bottom: 20px;
+}
+
+.mrgTop10 {
+    margin-top: -10px;
+}
+
+
+#detailedInfDataTabContainer {
+    margin-left: 15px;
+    margin-right: 5px;
+}
+
+#detailedDataTableHeading {
+    margin-top: 15px;
+    margin-left: 5px;
+    position: absolute;
+}
+
+.recommendCompareDiv {
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.recommendItem {
+    margin-top: 20px;
+}
+
+.compareIrrelevantClass {
+    display: none;
+}
+
+#recommendActiveQTableContainer > table {
+    position: relative;
+    z-index: 50;
+    background: white;
+}
+
+body {
+    overflow-y: hidden;
+}
+
+#saveOption {
+    position: absolute;
+    display: flex;
+    background-color: #3e70bb;
+    flex-direction: row-reverse;
+    right: 44px;
+    padding: 5px;
+    bottom: 50px;
+    top: auto;
+    border-radius: 12px;
+    z-index: 100;
+}
+
+#saveOption:hover {
+    background-color: #2b5696;
+}
+
+#saveOption > span {
+    font-size: 55px;
+    color: white;
+    z-index: 51;
+    cursor: pointer;
+}

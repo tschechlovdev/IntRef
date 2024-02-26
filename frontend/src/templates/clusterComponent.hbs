@@ -1,0 +1,16 @@
+<div id="clusterDiv_{{id}}">
+    <div class="d-flex justify-content-center clusterheader" id="clusterHeaderDiv">
+        <h3>{{topicHeader}}</h3>
+    </div>
+    <div id="clusterDiv" class="d-flex justify-content-center row">
+        {{#each cluster}}
+            <div class='oval' class='col' id="clu_cont_{{id}}">
+                <h5> {{header}}</h5>
+                {{{content}}}
+                <hr>
+                Number of Instances: {{{nr_instances}}} <br>
+                Class: {{{label}}}
+            </div>
+        {{/each}}
+    </div>
+</div>

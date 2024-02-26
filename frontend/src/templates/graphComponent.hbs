@@ -1,0 +1,71 @@
+<form id="GraphForm_{{id}}" name="graphForm" class="graphForm">
+    <div class="row justify-content-center" style="display: none;">
+        {{#if is2}}
+            <button class='btn btn-default col-auto mr-auto' type="button" id="splitButton_{{id}}">
+                <>
+            </button>
+            <h5 class="col-md-4 mr-md-auto" id="header_{{id}}"></h5>
+        {{/if}}
+        {{#if is1}}
+            <h5 class="col-md-4 ml-md-auto" id="header_{{id}}"></h5>
+            <button class='btn btn-default col-auto ml-auto' type="button" id="splitButton_{{id}}">
+                <>
+            </button>
+        {{/if}}
+        {{#if is0}}
+            <h5 class="col-md-4" id="header_{{id}}"></h5>
+        {{/if}}
+    </div>
+
+
+    <!--- Graph + Legend --->
+    <div id="graphContainer" class="align-content-center">
+        <div class="histogramDivClass" id="histogramDiv_{{id}}"></div>
+        <div class="vis_legend" id="legendDiv_{{id}}">
+            <svg id="diagramLegend_{{id}}" height="40"></svg>
+        </div>
+        <div id="deletedAxisDiv_{{id}}" style="display: none;"></div>
+    </div>
+
+    <div class="graphAllOptionContainer">
+        <!--- Graph Input --->
+        <div class="input-group form-group row" id="GraphInput_{{id}}">
+            <div class="input-group-prepend">
+                <label class="input-group-text" for="graphAttDropdown_{{id}}">Attribute</label>
+            </div>
+            <select class="custom-select histoOptionSelect" id="graphAttDropdown_{{id}}">
+            </select>
+
+            <div class="input-group-prepend">
+                <label class="input-group-text" for="clusterDropdown_{{id}}">Cluster</label>
+            </div>
+            <select class="custom-select histoOptionSelect" id="clusterDropdown_{{id}}">
+            </select>
+        </div>
+
+        <!--- Select Graph Type --->
+        <div class="form-group row from_group_diatype" id="diagramRadioForm_{{id}}">
+            <div class="form-check-inline col mb-3">
+                <input class="form-check-input" type="radio" name="diagramRadios_{{id}}" id="histogramSingleRadio_{{id}}"
+                    value="attribute" checked="checked">
+                <label class="form-check-label" for="histogramSingleRadio_{{id}}">Attribute</label>
+            </div>
+            <div class="form-check-inline col mb-3" style="display: none;">
+                <input class="form-check-input" type="radio" name="diagramRadios_{{id}}" id="histogramDoubleRadio_{{id}}"
+                    value="dataset">
+                <label class="form-check-label" for="histogramDoubleRadio_{{id}}">Dataset</label>
+            </div>
+            <div class="form-check-inline col mb-3" style="display: none;">
+                <input class="form-check-input" type="radio" name="diagramRadios_{{id}}" id="histogramDebugRadio_{{id}}"
+                    value="class">
+                <label class="form-check-label" for="histogramDebugRadio_{{id}}">Class</label>
+            </div>
+            <div>
+                <input class="form-check-input" type="radio" name="diagramRadios_{{id}}"
+                    id="parallelCoordinatesRadio_{{id}}"
+                    value="coordinates">
+                <label class="form-check-label" for="parallelCoordinatesRadio_{{id}}">Parallele Koordinaten</label>
+            </div>
+        </div>
+    </div>
+</form>

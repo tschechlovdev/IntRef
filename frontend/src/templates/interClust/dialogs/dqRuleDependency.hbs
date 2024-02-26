@@ -1,0 +1,24 @@
+<div class="dependency content-dependency">
+    <div class="dependency_select_container">
+        <span>Attribut</span>
+        <select class="form-control depAttSelect">
+            {{#each attributes as |attribute|}}
+            <option type-id="{{attribute}}"> {{attribute}} </option>
+            {{/each}}
+        </select>
+    </div>
+    <div class="dependency_select_container">
+        <span>Operator</span>
+        <select class="form-control compSelect">
+            <option type-id="==">=</option>
+            <option type-id="!=">!=</option>
+            <option type-id="<">&lt;</option>
+            <option type-id=">">></option>
+        </select>
+    </div>
+    <div class="dependency_select_container">
+        <span>Vergleichswert</span>
+        <input type="text" class="form-control inputVal" placeholder="Wert">
+    </div>
+    <button type="button" class="btn btn-danger delete_dependency_button">Remove</button>
+</div>

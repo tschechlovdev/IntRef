@@ -1,0 +1,10 @@
+<table id="statTable" class="table" data-height="360">
+    <thead>
+        <tr>
+            <th data-field="description"></th>
+            {{#each attributes as |attribute|}}
+                <th data-field="{{attribute}}">{{attribute}}</th>
+            {{/each}}
+        </tr>
+    </thead>
+</table>

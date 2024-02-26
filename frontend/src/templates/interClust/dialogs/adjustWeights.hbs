@@ -1,0 +1,38 @@
+<div class="modal fade" id="{{id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Gewichtung Anpassen: {{name}}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div>
+                    <h6>Attribute sortiert nach Relevanz (absteigend):</h6>
+                    {{#each attributes as |attribute|}}
+                    {{#ifEquals attribute.[2] 0}}
+                        <span class="badge badge-primary attributeWeightBadge">
+                    {{/ifEquals}}
+                    {{#ifEquals attribute.[2] 1}}
+                        <span class="badge badge-success attributeWeightBadge">
+                    {{/ifEquals}}
+                            <span>{{attribute.[0]}}</span> 
+                            <span class="attributeWeightBadgeSeparation"></span> 
+                            <input class="attributeWeightBadgeInput" id="weight_{{attribute.[3]}}" value="{{attribute.[1]}}">
+                        </span>
+                    {{/each}}
+                </div>
+                <div class="weightLegend">
+                    <div class="weightLegendExample"></div>
+                    <span>Markiert ein für die Separierung der Daten besonders relevantes Attribut</span>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Schließen</button>
+                <button type="button" class="btn btn-primary btnSaveWeights">Speichern</button>
+            </div>
+        </div>
+    </div>
+</div>

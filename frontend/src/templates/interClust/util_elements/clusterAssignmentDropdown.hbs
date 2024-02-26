@@ -1,0 +1,6 @@
+<select class="selectpicker" data-style="btn-primary" backend_row_id="{{row_id}}">
+    <option clust_id="{{selected.[0]}}" backend_row_id="{{row_id}}" selected>{{selected.[1]}}</option>
+    {{#each clusters as |cluster|}}
+        <option clust_id="{{cluster.[0]}}" backend_row_id="{{row_id}}" > {{cluster.[1]}} </option>
+    {{/each}}
+</select>

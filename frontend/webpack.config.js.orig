@@ -1,0 +1,92 @@
+var path = require("path");
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+var webpack = require("webpack");
+ 
+ 
+ 
+ 
+var config = {
+    /*
+     * app.ts represents the entry point to your web application. Webpack will
+     * recursively go through every "require" statement in app.ts and
+     * efficiently build out the application's dependency tree.
+     */
+    entry: {
+        index: ["./src/index.ts"]
+    },
+ 
+    /*
+     * The combination of path and filename tells Webpack what name to give to
+     * the final bundled JavaScript file and where to store this file.
+     */
+    output: {
+        path: path.resolve(__dirname, "dist"),
+        filename: "bundle.js",
+ 
+    },
+ 
+    /*
+     * resolve lets Webpack now in advance what file extensions you plan on
+     * "require"ing into the web application, and allows you to drop them
+     * in your code.
+     */
+    resolve: {
+        extensions: ['.ts', '.tsx', '.js', '.css', '.png']
+    },
+ 
+    devtool: 'source-map',
+    plugins: [
+        new HtmlWebpackPlugin({  // Also generate a test.html
+            filename: 'index.html',
+            template: 'src/index.html'
+        }),
+        new MiniCssExtractPlugin("styles.css"),
+        new webpack.ProvidePlugin({
+            $: "jquery",
+            jQuery: "jquery"
+        }),
+    ],
+ 
+    module: {
+        /*
+         * Each loader needs an associated Regex test that goes through each
+         * of the files you've included (or in this case, all files but the
+         * ones in the excluded directories) and finds all files that pass
+         * the test. Then it will apply the loader to that file. I haven't
+         * installed ts-loader yet, but will do that shortly.
+         */
+        rules: [
+            {
+                test: /\.ts$/,
+                use: "ts-loader",
+                exclude: /node_modules/
+            },
+            {
+                test: /\.css$/,
+                use:
+                [MiniCssExtractPlugin.loader,
+               "css-loader"]
+            },
+            {
+                test: /\.hbs/,
+                use: "handlebars-loader"
+            },
+            // {
+            //     test: /\.(png|woff|woff2|eot|ttf|svg)$/,
+            //     use: 'url-loader?limit=100000'
+            // },
+            {   test: /\.jpe?g$|\.gif$|\.png$/,
+                //use: "url-loader?name=[name].[ext]&outputPath=images/"
+                use: require.resolve("file-loader") + "?name=images/[name].[ext]"
+            },
+            {   test: /\.woff($|\?)|\.woff2($|\?)|\.ttf($|\?)|\.eot($|\?)|\.svg($|\?)/,
+                use: 'url-loader'
+            }
+ 
+ 
+        ]
+    }
+};
+ 
+module.exports = config;

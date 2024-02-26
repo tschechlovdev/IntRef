@@ -1,0 +1,13 @@
+<div class="input-group form-group row" id="attributeFormDiv_{{id}}">
+    <select class="custom-select col" id="attributeDropdown_{{id}}">
+        <option value="" selected>Select Attribute</option>
+        {{#each attribute}}
+            <option value="{{value}}">{{name}}</option>
+        {{/each}}
+    </select>
+    <div class="input-group-prepend">
+        <button type="button" class="btn btn-danger"  style="vertical-align: center" aria-label="Close" id="delAttribute_{{id}}" >
+            x
+        </button>
+    </div>
+</div>
